@@ -4,8 +4,10 @@ ARG DOWNLOAD_LINK=https://download.01.org/opencv/2019/openvinotoolkit/R2/l_openv
 ARG INSTALL_DIR=/opt/intel/openvino
 ARG BIN_FILE=https://download.01.org/opencv/2019/open_model_zoo/R1/models_bin/face-detection-adas-0001/FP16/face-detection-adas-0001.bin
 ARG WEIGHTS_FILE=https://download.01.org/opencv/2019/open_model_zoo/R1/models_bin/face-detection-adas-0001/FP16/face-detection-adas-0001.xml
-ARG IMAGE_FILE_0=https://pixabay.com/images/download/girl-237871_640.jpg
-ARG IMAGE_FILE_1=https://pixabay.com/images/download/human-740259_640.jpg
+# ARG IMAGE_FILE_0=https://pixabay.com/images/download/girl-237871_640.jpg
+# ARG IMAGE_FILE_1=https://pixabay.com/images/download/human-740259_640.jpg
+ARG IMAGE_FILE_0=https://raw.githubusercontent.com/elbruno/rpiopenvino/master/images/girl-237871_640.jpg
+ARG IMAGE_FILE_1=https://raw.githubusercontent.com/elbruno/rpiopenvino/master/images/human-740259_640.jpg
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	apt-utils \
