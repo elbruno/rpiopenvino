@@ -15,6 +15,11 @@ import imutils
 net = cv2.dnn.readNet('face-detection-adas-0001.xml',
                      'face-detection-adas-0001.bin')
 # Specify target device.
+# ERROR net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
+# OK net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
+# ERROR net.setPreferableBackend(cv2.dnn.DNN_BACKEND_HALIDE)
+
+net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_MYRIAD)
 
 # open video frame
