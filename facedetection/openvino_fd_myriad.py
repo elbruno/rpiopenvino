@@ -1,3 +1,8 @@
+# This is the official sample demo file desribed in the installer documentation 
+# Date: 2020 01 26 
+# Install OpenVINO™ toolkit for Raspbian* OS 
+# http://docs.openvinotoolkit.org/2019_R1/_docs_install_guides_installing_openvino_raspbian.html
+
 import cv2 as cv
 import sys, getopt
 
