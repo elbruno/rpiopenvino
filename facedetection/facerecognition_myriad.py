@@ -41,9 +41,6 @@ while True:
         ymin = int(detection[4] * frame.shape[0])
         xmax = int(detection[5] * frame.shape[1])
         ymax = int(detection[6] * frame.shape[0])
-
-        print(f'xmin: {xmin} - ymin: {ymin} - xmax: {xmax} - ymax: {ymax}')
-
         if confidence > 0.5:
             cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), color=(0, 255, 0))           
     
