@@ -9,6 +9,7 @@
 
 import cv2
 import time
+import imutils
 
 # Load the model.
 net = cv2.dnn.readNet('face-detection-adas-0001.xml',
@@ -29,7 +30,7 @@ while True:
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     # Prepare input blob and perform an inference.
-    blob = cv2.dnn.blobFromImage(reg_frame, size=(640, 480), ddepth=cv2.CV_8U)
+    blob = cv2.dnn.blobFromImage(rgb_frame, size=(640, 480), ddepth=cv2.CV_8U)
     net.setInput(blob)
     out = net.forward()
 
@@ -44,7 +45,7 @@ while True:
         print(f'xmin: {xmin} - ymin: {ymin} - xmax: {xmax} - ymax: {ymax}')
 
         if confidence > 0.5:
-            cv.rectangle(frame, (xmin, ymin), (xmax, ymax), color=(0, 255, 0))           
+            cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), color=(0, 255, 0))           
     
     #display FPS
     fpsInfo = "FPS: " + str(1.0 / (time.time() - start_time)) # FPS = 1 / time to process loop
